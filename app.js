@@ -7,9 +7,12 @@ var hbs = require("hbs");
 var exphbs = require("express-handlebars");
 
 var indexRouter = require("./routes/index");
+var usersRouter = require('./routes/users');
+
 var session = require("express-session");
 var bodyParser = require("body-parser");
 var flash = require("connect-flash");
+var passport = require('passport');
 
 var app = express();
 //for BodyParser
@@ -37,8 +40,6 @@ app.use(
   })
 );
 
-app.use(flash()); // use connect-flash for flash messages stored in session
-
 require("dotenv").config();
 app.use(logger("dev"));
 app.use(express.json());
@@ -46,7 +47,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(flash()); // use connect-flash for flash messages stored in session
+
 app.use("/", indexRouter);
+app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
