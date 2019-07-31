@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   persona.associate = function(models) {
     // associations can be defined here
+    persona.belongsTo(models.rol, {foreignKey:'id_rol'});
   };
   return persona;
 };
