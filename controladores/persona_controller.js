@@ -17,7 +17,7 @@ class persona_controller {
 
         var Persona= new persona(dperson);
         Persona.save().then(function(result){
-                req.flash('ok', 'se ha guardado');
+               // req.flash('ok', 'se ha guardado');
                 res.redirect('/');
                 res.send(result);
         }).error(function(error){
@@ -25,3 +25,5 @@ class persona_controller {
         });
     }
 }
+
+module.exports = persona_controller;
