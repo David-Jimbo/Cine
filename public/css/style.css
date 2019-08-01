@@ -1,4 +1,57 @@
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+
+#registro{
+margin-top: 50px;
+}
+
+.color-change-2x {
+    animation: color-change-2x 2s linear infinite alternate both;
+    animation-name:  colors
+}
+
+@keyframes colors {
+  0% {
+    background: #19dcea;
+  }
+  100% {
+    background: #b22cff;
+  }
+}
+
+.bg-pan-bottom {
+    animation: bg-pan-bottom 8s both;
+    animation-name:  holas<<<<<<<
+}
+
+@keyframes holas {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+
+
+.roll-in-left {
+    animation: roll-in-left 0.6s ease-out both;
+    animation-name:  roll
+}
+
+@keyframes roll {
+  0% {
+    transform: translateX(-800px) rotate(-540deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -2660,7 +2713,7 @@ input[type="button"].btn-block {
 }
 .control-panel {
   position: absolute;
-  right: 15px;
+  right: 25px;
   top: 10px;
 }
 .content-wrapper {
@@ -3000,7 +3053,7 @@ ul#navigation a:hover {
   background-image: url(../images/components/wave-hover.svg);
 }
 .btn--book {
-  padding: 7px 17px;
+  padding: 7px 2px;
 }
 .btn--wide {
   padding-left: 28px;
@@ -7618,10 +7671,11 @@ ul#navigation li.mega-menu__nav-item:hover:before {
   font-size: 20px;
 }
 .login {
-  background-color: #ffffff;
   padding-top: 58px;
   padding-bottom: 22px;
 }
+
+
 .login .login__title {
   font-size: 22px;
   font-family: 'aleobold', sans-serif;

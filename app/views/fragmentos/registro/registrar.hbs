@@ -1,0 +1,76 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $("#fechaNacimiento").change(function () {  //  funcion que se ejecuta al momento que el valor de la fecha de naciemiento cambia
+            var edad = calcularEdad($("#fechaNacimiento").val());
+            $("#edad").val(edad);
+        })
+    });
+
+    //funcion que nos permite calcular la edad a partir de la fecha de nacimiento
+    function calcularEdad(fecha) {
+        //var fecha = document.getElementById("nacimiento");
+        var hoy = new Date();
+        var cumpleanos = new Date(fecha);
+        var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+        var m = hoy.getMonth() - cumpleanos.getMonth();
+
+        if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+            edad--;
+        }
+        console.log("TIENES: " + edad + " ANIOS")
+        return edad;
+    }
+</script>
+
+<!-- Main content -->
+<div class="animated color-change-2x">
+    
+    <form id="register-form" class="login" method='get'>
+        <div class="animated roll-in-left">
+            <p id="registro" class="login__title">{{title2}} <br><span class="login-edition">Bienvenido a A.Movie</span>
+            </p>
+
+        </div>
+
+        <div class="field-wrap">
+            <div>
+                <label for="nombres">Ingrese sus nombres</label>
+                <input type="text" placeholder="Nombres" name="nombres" id="nombres" class="login__input" />
+            </div><br>
+            <div>
+                <label for="">Ingrese sus apellidos</label>
+                <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" class="login__input" />
+            </div><br>
+            <div>
+                <label for="">Ingrese su cedula de identidad</label>
+                <input type="text" placeholder="CI" name="cedula" id="cedula" class="login__input" />
+            </div><br>
+            <div>
+                <label for="">Ingrese su fecha de nacimiento</label>
+                <input type="date" placeholder="Fecha de nacimiento" name="fechaNacimiento" id="fechaNacimiento"
+                    class="login__input" />
+            </div><br>
+            <div>
+                <label for="">Edad</label>
+                <input type="text" disabled placeholder="Edad" name="edad" id="edad" class="login__input" />
+            </div><br>
+            <div>
+                <label for="">Ingrese su correo electronico</label>
+                <input type="email" placeholder="Email" name="email" class="login__input" />
+            </div><br>
+            <div>
+                <label for="">Ingrese su contraseña</label>
+                <input type="password" placeholder="Password" name="contraseña" class="login__input" />
+            </div>
+
+        </div>
+
+        <div class="login__control">
+            <br> <button type='submit' class="btn btn-md btn--warning btn--wider">Registrarse</button>
+        </div>
+    </form>
+
+</div>
