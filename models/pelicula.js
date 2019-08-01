@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     clasificacion: DataTypes.STRING,
     external_id: DataTypes.UUID,
    
-  }, {});
+  }, {freezeTableName: true});
   
   return pelicula;
 };
