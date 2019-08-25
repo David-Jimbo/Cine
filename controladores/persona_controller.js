@@ -9,9 +9,9 @@ class persona_controller {
             cedula: req.body.cedula,
             apellidos: req.body.apellidos,
             nombres: req.body.nombres,
-            fecha_nac: req.body.fecha_nac,
+            fecha_nac: req.body.fechaNacimiento,
             edad: req.body.edad,
-            correo: req.body.correo,
+            correo: req.body.email,
             clave: req.body.clave
         };
 
@@ -20,6 +20,7 @@ class persona_controller {
                // req.flash('ok', 'se ha guardado');
                 res.redirect('/');
                 res.send(result);
+                console.log(result);
         }).error(function(error){
             res.send(error);
         });

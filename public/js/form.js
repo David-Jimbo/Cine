@@ -163,7 +163,7 @@ $(function () {
         var $cedula = self.find('[name=cedula]')
         var $fechaN = self.find('[name=fechaNacimiento]')
 
-        var soloLetras = /^[a-z\s]+$/; //expresion que regula que se acepten solo letras y espacios
+        var soloLetras = /^[a-zA-Z\s]+$/; //expresion que regula que se acepten solo letras y espacios
         //condiciones para comprobar los nombres
         if ($nombre.val().length == 0) {
             createErrTult('Escriba un nombre!', $nombre);
@@ -241,15 +241,15 @@ $(function () {
         }
 
         if (error != 0) return;
-        self.find('[type=submit]').attr('disabled', 'disabled');
+        //self.find('[type=submit]').attr('disabled', 'disabled');
 
-        self.children().fadeOut(300, function () { $(this).remove() })
-        $('<p class="login__title">sign in <br><span class="login-edition">welcome to A.Movie</span></p><p class="success">You have successfully<br> signed in!</p>').appendTo(self)
-            .hide().delay(300).fadeIn();
+        //self.children().fadeOut(300, function () { $(this).remove() })
+        //$('<p class="login__title">sign in <br><span class="login-edition">welcome to A.Movie</span></p><p class="success">You have successfully<br> signed in!</p>').appendTo(self)
+          //  .hide().delay(300).fadeIn();
 
 
-        // var formInput = self.serialize();
-        // $.post(self.attr('action'),formInput, function(data){}); // end post
+        var formInput = self.serialize();
+        $.post(self.attr('action'),formInput, function(data){}); // end post
     }); // end submit
 
 
